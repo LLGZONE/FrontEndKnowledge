@@ -8,4 +8,5 @@ test("sort from small to big", () => {
   testArr = [2, 4, 3, 6, 3, 9]
 
   expect(bubbleSort(testArr)).toEqual([2, 3, 3, 4, 6, 9])
+  expect(bubbleSort([])).toEqual([])
 })
