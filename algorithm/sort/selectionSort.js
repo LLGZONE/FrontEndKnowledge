@@ -1,3 +1,9 @@
+/**
+ * selectionSort
+ * ave: O(n2) best: O(n) worst: O(n)
+ * space: O(1)
+ * stable
+ */
 function selectionSort(arr) {
   let len = arr.length
 
