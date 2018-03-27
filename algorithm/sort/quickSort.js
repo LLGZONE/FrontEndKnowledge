@@ -30,26 +30,30 @@ export function quickSort1(arr) {
  * not stable
  * in-place
  */
-export function quickSort2 (arr, low = 0, high = arr.length - 1) {
+export function quickSort2(arr, low = 0, high = arr.length - 1) {
   if (low < high) {
     const pi = partition(arr, low, high)
 
     quickSort2(arr, low, pi - 1)
     quickSort2(arr, pi + 1, high)
   }
+
   return arr
 }
 
 function partition(arr, low, high) {
-  const pivot = arr[high]
   let i = low - 1
+  const pivot = arr[high]
 
-  for (let j = low; j <= high - 1; j++) {
+  for (let j = low; j <= high-1; j++) {
     if (arr[j] <= pivot) {
       i++
-      [arr[i], arr[j]] = [arr[j], arr[i]]
+      if (arr[i] !== arr[j]) {
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+      }
     }
   }
+
   [arr[i+1], arr[high]] = [arr[high], arr[i+1]]
 
   return i + 1

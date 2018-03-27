@@ -6,10 +6,12 @@
   "author": "llgzone <985395976@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "jest": "^22.4.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
