@@ -21,11 +21,12 @@
     "pretty-quick": "^1.4.1"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
+    "ctest": "jest --coverage",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint \"!(node_modules|coverage)/**/*.js\"",
     "precommit": "yarn lint",
-    "prepush": "pretty-quick --stadged && yarn test"
+    "prepush": "pretty-quick --stadged && yarn ctest"
   },
   "dependencies": {
     "babel-core": "^6.26.0",

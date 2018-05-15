@@ -1,4 +1,4 @@
-import { quickSort1, quickSort2 } from '../quickSort'
+import {quickSort1, quickSort2} from '../quickSort'
 
 test('quick sort', () => {
   const testArr = [1, 3, 9, 3, 6, 5, 2, 1]

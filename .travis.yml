@@ -9,6 +9,7 @@ cache:
 before_install:
     - yarn install
 script:
-  - yarn test
+  - yarn lint
+  - yarn ctest
 after_script:
   - yarn coverage
