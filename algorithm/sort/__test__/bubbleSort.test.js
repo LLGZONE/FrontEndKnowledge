@@ -1,6 +1,6 @@
 import bubbleSort from '../bubbleSort'
 
-test("sort from small to big", () => {
+test('sort from small to big', () => {
   let testArr = [1, 3, 5, 2, 9, 7]
 
   expect(bubbleSort(testArr)).toEqual([1, 2, 3, 5, 7, 9])

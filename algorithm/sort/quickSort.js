@@ -45,7 +45,7 @@ function partition(arr, low, high) {
   let i = low - 1
   const pivot = arr[high]
 
-  for (let j = low; j <= high-1; j++) {
+  for (let j = low; j <= high - 1; j++) {
     if (arr[j] <= pivot) {
       i++
       if (arr[i] !== arr[j]) {
@@ -54,7 +54,7 @@ function partition(arr, low, high) {
     }
   }
 
-  [arr[i+1], arr[high]] = [arr[high], arr[i+1]]
+  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]]
 
   return i + 1
 }
