@@ -1,3 +1,7 @@
+/**
+ * return a random array
+ * @param {Array} arr
+ */
 function randomArr(arr) {
   arr = Array.from(arr)
   const len = arr.length

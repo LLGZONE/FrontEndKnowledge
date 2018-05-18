@@ -6,6 +6,8 @@
   "author": "llgzone <985395976@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
@@ -27,9 +29,5 @@
     "lint": "eslint \"!(node_modules|coverage)/**/*.js\"",
     "precommit": "yarn lint",
     "prepush": "pretty-quick --stadged && yarn ctest"
-  },
-  "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
   }
 }
