@@ -9,11 +9,12 @@ function maxHeapify(arr, i) {
   let largest = i
   const left = 2 * i + 1
   const right = 2 * i + 2
+  const heapSize = arr.length
 
-  if (left < arr.length && arr[left] > arr[i]) {
+  if (left < heapSize && arr[left] > arr[i]) {
     largest = left
   }
-  if (right < arr.length && arr[right] > arr[largest]) {
+  if (right < heapSize && arr[right] > arr[largest]) {
     largest = right
   }
   if (largest !== i) {
