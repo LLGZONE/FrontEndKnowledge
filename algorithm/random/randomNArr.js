@@ -3,6 +3,7 @@ import random from './random'
 /**
  * @param {number[]} arr
  * @param {number} m the size of random arr
+ * @returns {number[]} the random array
  */
 function randomNArr(arr, m) {
   const len = arr.length

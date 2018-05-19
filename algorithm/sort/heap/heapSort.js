@@ -1,6 +1,5 @@
 import buildMaxHeap from './buildMaxHeap'
 import maxHeapify from './maxHeapify'
-import swap from '../../../utils/wrap'
 
 /**
  * sort the array from min to max
@@ -10,10 +9,11 @@ function heapSort(arr) {
   // make the arr to be a heap
   buildMaxHeap(arr)
   // the max number is in the first index
-  const heapSize = arr.length
-  for (let i = heapSize; i > 1; i--) {
-    swap([arr[0], arr[i]])
-    maxHeapify(arr.slice(0, heapSize - 1), 0)
+  let heapSize = arr.length
+  for (let i = heapSize - 1; i > 0; i--) {
+    ;[arr[0], arr[i]] = [arr[i], arr[0]]
+    heapSize--
+    maxHeapify(arr, 0, heapSize)
   }
 }
 

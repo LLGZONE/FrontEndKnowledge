@@ -4,12 +4,16 @@
  * their value and recurse.
  * @param {Number[]} arr the heap array
  * @param {Number} i the index
+ * @param {Number} [heapSize]
  */
-function maxHeapify(arr, i) {
+function maxHeapify(arr, i, heapSize = arr.length) {
+  if (heapSize > arr.length) {
+    throw new Error("the heap size can't bigger than arr's length ")
+  }
+
   let largest = i
   const left = 2 * i + 1
   const right = 2 * i + 2
-  const heapSize = arr.length
 
   if (left < heapSize && arr[left] > arr[i]) {
     largest = left
@@ -19,7 +23,7 @@ function maxHeapify(arr, i) {
   }
   if (largest !== i) {
     ;[arr[i], arr[largest]] = [arr[largest], arr[i]]
-    maxHeapify(arr, largest)
+    maxHeapify(arr, largest, heapSize)
   }
 }
 
