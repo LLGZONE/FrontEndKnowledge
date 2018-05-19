@@ -2,7 +2,7 @@
  * both the left child and right child are heap now,
  * to keep the heap, we just compare and then exchange
  * their value and recurse.
- * @param {Array} arr the heap array
+ * @param {Number[]} arr the heap array
  * @param {Number} i the index
  */
 function maxHeapify(arr, i) {

@@ -1,5 +1,5 @@
 /**
- * @param {Array} arr the heap array
+ * @param {Number[]} arr the heap array
  * @param {Number} i the index
  */
 function minHeapify(arr, i) {
