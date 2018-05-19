@@ -10,6 +10,7 @@ test('sorted array return true', () => {
   expect(isSorted([1, 2, 3, 4, 5])).toBeTruthy()
   expect(isSorted([1])).toBeTruthy()
   expect(isSorted([1], false)).toBeTruthy()
+  expect(isSorted([2, 5, 3, 8, 9])).toBeFalsy()
   expect(isSorted([1, 2, 3, 4, 5], true)).toBeFalsy()
   expect(isSorted([5, 4, 3, 2, 1], true)).toBeTruthy()
 })

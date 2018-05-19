@@ -15,6 +15,8 @@ function maxHeapify(arr, i) {
     if (largest !== i) {
       ;[arr[i], arr[largest]] = [arr[largest], arr[i]]
       i = largest
+    } else {
+      return
     }
   }
 }
