@@ -23,11 +23,12 @@
     "pretty-quick": "^1.4.1"
   },
   "scripts": {
-    "test": "jest",
-    "ctest": "jest --coverage",
+    "test": "jest -o",
+    "ctest": "jest --coverage -o",
+    "ftest": "jest --coverage",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint \"!(node_modules|coverage)/**/*.js\"",
     "precommit": "yarn lint",
-    "prepush": "pretty-quick --stadged && yarn ctest"
+    "prepush": "pretty-quick --stadged && yarn ftest"
   }
 }

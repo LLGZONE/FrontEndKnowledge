@@ -6,9 +6,12 @@ import maxHeapify from './maxHeapify'
  */
 function buildMaxHeap(arr) {
   const heapSize = arr.length
+
   for (let i = Math.floor(heapSize / 2) - 1; i >= 0; i--) {
     maxHeapify(arr, i)
   }
+
+  return arr
 }
 
 export default buildMaxHeap

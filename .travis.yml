@@ -10,6 +10,6 @@ before_install:
     - yarn install
 script:
   - yarn lint
-  - yarn ctest
+  - yarn ftest
 after_script:
   - yarn coverage
