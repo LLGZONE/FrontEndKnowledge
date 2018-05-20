@@ -47,6 +47,7 @@ describe('priority queue', () => {
     test('method insert', () => {
       q.insert(10)
       expect(is.maxHeap(q.heap)).toBeTruthy()
+      expect(q.heapSize).toBe(10)
     })
   }
 })
