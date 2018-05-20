@@ -65,9 +65,10 @@ class priorityQueue {
     heap[i] = key
 
     while (i > 0 && heap[this.parent(i)] < key) {
-      ;[heap[this.parent(i)], heap[i]] = [heap[i], heap[this.parent(i)]]
+      heap[i] = heap[this.parent(i)]
       i = this.parent(i)
     }
+    heap[i] = key
   }
 
   /**
