@@ -1,4 +1,4 @@
-import Queue from '../priorityQueue/queue'
+import Queue from '../priorityQueue/priorityQueue'
 import randomNArr from '../../../random/randomNArr'
 import is from '../../../../utils/is'
 

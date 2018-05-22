@@ -1,22 +1,15 @@
 import PriorityQueue from './priorityQueue'
 
-/**
- * @class queue achieved by priority queue
- */
-class Queue {
-  /**
-   * @param {Number[]} arr the init array
-   * @constructor
-   */
+class Stack {
   constructor(arr = []) {
     const temp = []
     this.id = 0
     this.map = arr.reduce((m, ele) => {
       temp.push(this.id)
-      m.set(this.id--, ele)
+      m.set(this.id++, ele)
       return m
     }, new Map())
-    this.queue = new PriorityQueue(temp)
+    this.s = new PriorityQueue(temp)
   }
 
   /**
@@ -24,9 +17,9 @@ class Queue {
    * @param {Number} num
    */
   push(num) {
-    this.id--
+    this.id++
     this.map.set(this.id, num)
-    this.queue.insert(this.id)
+    this.s.insert(this.id)
   }
 
   /**
@@ -34,7 +27,7 @@ class Queue {
    * @returns {Number}
    */
   top() {
-    return this.map.get(this.queue.maxmum())
+    return this.map.get(this.s.maxmum())
   }
 
   /**
@@ -42,7 +35,7 @@ class Queue {
    * @returns {Number}
    */
   pop() {
-    const topId = this.queue.extractMax()
+    const topId = this.s.extractMax()
     const top = this.map.get(topId)
     this.map.delete(topId)
 
@@ -58,4 +51,4 @@ class Queue {
   }
 }
 
-export default Queue
+export default Stack
