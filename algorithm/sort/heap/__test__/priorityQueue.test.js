@@ -49,5 +49,12 @@ describe('priority queue', () => {
       expect(is.maxHeap(q.heap)).toBeTruthy()
       expect(q.heapSize).toBe(10)
     })
+
+    test('method delete', () => {
+      const d = q.heap[3]
+      expect(q.delete(3)).toBe(d)
+      expect(is.maxHeap(q.heap)).toBeTruthy()
+      expect(q.heapSize).toBe(9)
+    })
   }
 })

@@ -56,6 +56,7 @@ class PriorityQueue {
    * @param {Number} i index
    * @param {Number} key the priority of the element
    */
+  // increaseKey balance the front heap but maxHeapify balance the back heap
   increaseKey(i, key) {
     const heap = this.heap
     if (key < heap[i]) {
@@ -79,6 +80,25 @@ class PriorityQueue {
     this.heapSize++
     this.heap.push(key)
     this.increaseKey(this.heapSize - 1, key)
+  }
+
+  /**
+   * delete the node i and return it
+   * @param {Number} i
+   */
+  delete(i) {
+    const heap = this.heap
+    const deleted = this.heap[i]
+    this.heapSize--
+
+    if (heap[i] < heap[this.heapSize]) {
+      this.increaseKey(i, heap[this.heapSize])
+    } else {
+      ;[heap[i], heap[this.heapSize]] = [heap[i], heap[this.heapSize]]
+      maxHeapify(heap, i, this.heapSize)
+    }
+    heap.pop()
+    return deleted
   }
 }
 
