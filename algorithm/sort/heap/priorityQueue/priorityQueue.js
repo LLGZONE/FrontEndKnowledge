@@ -8,7 +8,7 @@ class PriorityQueue {
   /**
    * @param {Number} arr
    */
-  constructor(arr) {
+  constructor(arr = []) {
     this.heapSize = arr.length
     this.heap = buildMaxHeap(arr.slice())
   }
