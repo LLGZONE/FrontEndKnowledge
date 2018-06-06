@@ -42,19 +42,23 @@ export function quickSort2(arr, low = 0, high = arr.length - 1) {
 }
 
 function partition(arr, low, high) {
-  let i = low - 1
+  let i = low
+  let count = 0
   const pivot = arr[high]
 
   for (let j = low; j <= high - 1; j++) {
+    // improve performance when elements are the same
+    if (arr[j] === pivot) {
+      count++
+    }
     if (arr[j] <= pivot) {
-      i++
       if (arr[i] !== arr[j]) {
-        [arr[i], arr[j]] = [arr[j], arr[i]]
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
       }
+      i++
     }
   }
 
-  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]]
-
-  return i + 1
+  ;[arr[i], arr[high]] = [arr[high], arr[i]]
+  return i - Math.floor(count / 2)
 }
