@@ -37,14 +37,15 @@ function weightedMedian(arr, begin = 0, end = arr.length - 1, pivot = 0.5) {
   let lsum = 0
   for (let i = begin; i <= q; i++) {
     // not correct sum
-    lsum += arr[i].weight
+    lsum += arr[i].weight * 100
   }
+  lsum = lsum / 100
   if (lsum - arr[q] < pivot && lsum >= pivot) {
     return arr[q]
   } else if (lsum >= pivot) {
     return weightedMedian(arr, begin, q - 1, pivot)
   } else {
-    return weightedMedian(arr, q + 1, end, pivot - lsum)
+    return weightedMedian(arr, q + 1, end, (pivot * 100 - lsum * 100) / 100)
   }
 }
 
