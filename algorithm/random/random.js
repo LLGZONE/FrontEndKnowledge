@@ -4,7 +4,7 @@
  * @param {number} max the max number
  * @returns {number} the random number
  */
-function random(min, max) {
+function random(max, min = 0) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
