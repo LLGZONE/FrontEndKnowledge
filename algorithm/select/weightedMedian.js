@@ -36,6 +36,7 @@ function weightedMedian(arr, begin = 0, end = arr.length - 1, pivot = 0.5) {
   const q = partition(arr, begin, end)
   let lsum = 0
   for (let i = begin; i <= q; i++) {
+    // not correct sum
     lsum += arr[i].weight
   }
   if (lsum - arr[q] < pivot && lsum >= pivot) {

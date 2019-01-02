@@ -11,5 +11,6 @@ test('weighted median', () => {
     {value: 10, weight: 0.1},
   ]
   let rarr = randomArr(arr)
+
   expect(weightedMedian(rarr)).toEqual({value: 7, weight: 0.15})
 })
